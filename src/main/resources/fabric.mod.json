@@ -3,11 +3,11 @@
 	"id": "easeon-ss-trampleguard",
 	"version": "${version}",
 	"name": "EaseonSS - TrampleGuard",
-	"description": "Eliminates annoying bat spawns in caves and dark areas.",
+	"description": "When enabled, prevents any entity from trampling farmland.",
 	"authors": [
 		"Teron"
 	],
-	"license": "CC0-1.0",
+    "license": "All Rights Reserved",
 	"icon": "assets/easeon/icon.png",
 	"environment": "*",
 	"entrypoints": {
