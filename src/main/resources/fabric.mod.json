@@ -16,7 +16,7 @@
 		]
 	},
     "mixins": [
-      "easeon.mixins.json"
+      "easeon.ss.trampleguard.mixins.json"
     ],
 	"depends": {
 		"fabricloader": ">=0.17.2",
