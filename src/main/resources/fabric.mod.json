@@ -1,26 +1,26 @@
 {
 	"schemaVersion": 1,
-	"id": "easeon-ss-trampleguard",
-	"version": "${version}",
-	"name": "EaseonSS - TrampleGuard",
-	"description": "Eliminates annoying bat spawns in caves and dark areas.",
-	"authors": [
-		"Teron"
-	],
-	"license": "CC0-1.0",
-	"icon": "assets/easeon/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.easeon.ss.trampleguard.Easeon"
-		]
-	},
+    "id": "easeon-ss-${mod_package}",
+    "version": "${version}",
+    "name": "EaseonSS - ${mod_name}",
+    "description": "${mod_description}",
+    "authors": [
+      "Teron"
+    ],
+    "license": "All Rights Reserved",
+    "icon": "assets/easeon/icon.png",
+    "environment": "*",
+    "entrypoints": {
+      "main": [
+        "com.easeon.ss.${mod_package}.Easeon"
+      ]
+    },
     "mixins": [
-      "easeon.mixins.json"
+      "easeon.ss.trampleguard.mixins.json"
     ],
 	"depends": {
 		"fabricloader": ">=0.17.2",
-		"minecraft": "~1.21.10",
+		"minecraft": "~1.21.9",
 		"java": ">=21",
 		"fabric-api": "*"
 	},

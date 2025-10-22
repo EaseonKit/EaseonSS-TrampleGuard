@@ -1,26 +1,19 @@
 package com.easeon.ss.trampleguard;
 
+import com.easeon.ss.core.api.registry.EaseonCommand;
+import com.easeon.ss.core.util.mod.EaseonModInfo;
+import com.easeon.ss.core.util.system.EaseonLogger;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class Easeon implements ModInitializer {
-    public static final String MOD_ID = "easeon-ss-trampleguard";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-    public static final ConfigManager CONFIG = new ConfigManager();
+    public static final EaseonModInfo info = EaseonModInfo.get(Easeon.class);
+    private static final EaseonLogger logger = EaseonLogger.get();
+    public static final Config config = Config.getInstance();
 
     @Override
     public void onInitialize() {
-        LOGGER.info("TrampleGuard Mod Initializing...");
+        EaseonCommand.register(Command::register);
 
-        CONFIG.load();
-
-        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-            EaseonCommand.register(dispatcher);
-            LOGGER.info("Commands registered!");
-        });
-
-        LOGGER.info("TrampleGuard Mod Initialized!");
+        logger.info("Initialized!");
     }
 }

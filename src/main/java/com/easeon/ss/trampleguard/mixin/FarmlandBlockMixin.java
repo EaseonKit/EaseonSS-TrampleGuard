@@ -11,9 +11,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class FarmlandBlockMixin {
     @Inject(method = "onLandedUpon", at = @At("HEAD"), cancellable = true)
     private void preventFarmlandTrample(CallbackInfo ci) {
-        var config = Easeon.CONFIG.isEnabled();
-        // 모든 엔티티의 농지 파손을 차단
-        if (config)
+        if (ci.isCancelled()) {
+            return;
+        }
+
+        var config = Easeon.config.enabled;
+        if (config) {
             ci.cancel();
+        }
     }
 }
