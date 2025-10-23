@@ -12,13 +12,9 @@ public class Config extends EaseonConfig {
         return EaseonConfig.getInstance(Config.class);
     }
 
-    public void on() {
-        this.enabled = true;
-        this.save();
-    }
-
-    public void off() {
-        this.enabled = false;
+    public void toggle(boolean enable)
+    {
+        this.enabled = enable;
         this.save();
     }
 }
