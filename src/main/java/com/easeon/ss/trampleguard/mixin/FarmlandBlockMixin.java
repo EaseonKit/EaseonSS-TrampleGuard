@@ -15,7 +15,7 @@ public class FarmlandBlockMixin {
             return;
         }
 
-        var config = Easeon.config.enabled;
+        var config = Easeon.instance.config.enabled;
         if (config) {
             ci.cancel();
         }
